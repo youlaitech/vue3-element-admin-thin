@@ -63,7 +63,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     plugins: [
       vue(),
       // MOCK 服务，开启 MOCK 放开注释即可
-      // mockDevServerPlugin(),
+      mockDevServerPlugin(),
       vueJsx(),
       UnoCSS({
         hmrTopLevelAwait: false,
@@ -117,11 +117,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         "pinia",
         "axios",
         "@vueuse/core",
-        "sortablejs",
         "path-to-regexp",
         "echarts",
-        "@wangeditor/editor",
-        "@wangeditor/editor-for-vue",
         "vue-i18n",
         "path-browserify",
         "element-plus/es/components/form/style/css",

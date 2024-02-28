@@ -332,7 +332,6 @@ declare module "vue" {
     readonly ElMessageBox: UnwrapRef<
       (typeof import("element-plus/es"))["ElMessageBox"]
     >;
-    readonly ElTree: UnwrapRef<(typeof import("element-plus/es"))["ElTree"]>;
     readonly acceptHMRUpdate: UnwrapRef<
       (typeof import("pinia"))["acceptHMRUpdate"]
     >;
@@ -1062,7 +1061,6 @@ declare module "@vue/runtime-core" {
     readonly ElMessageBox: UnwrapRef<
       (typeof import("element-plus/es"))["ElMessageBox"]
     >;
-    readonly ElTree: UnwrapRef<(typeof import("element-plus/es"))["ElTree"]>;
     readonly acceptHMRUpdate: UnwrapRef<
       (typeof import("pinia"))["acceptHMRUpdate"]
     >;
