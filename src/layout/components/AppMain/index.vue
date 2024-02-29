@@ -30,12 +30,17 @@ const cachedViews = computed(() => useTagsViewStore().cachedViews); // 缓存页
   background-color: var(--el-bg-color-page);
 }
 
+.hasTagsView .app-main {
+  min-height: calc(100vh - $navbar-height - $tags-view-height);
+}
+
 .fixed-header + .app-main {
   min-height: 100vh;
   padding-top: $navbar-height;
 }
 
 .hasTagsView .fixed-header + .app-main {
+  min-height: 100vh;
   padding-top: $navbar-height + $tags-view-height;
 }
 
@@ -50,7 +55,7 @@ const cachedViews = computed(() => useTagsViewStore().cachedViews); // 缓存页
   .app-main {
     height: calc(100vh - $navbar-height);
     padding-top: 0;
-    overflow-y: auto;
+    overflow: auto;
   }
 
   .hasTagsView .app-main {
@@ -58,10 +63,13 @@ const cachedViews = computed(() => useTagsViewStore().cachedViews); // 缓存页
     min-height: calc(100vh - $navbar-height - $tags-view-height);
   }
 
-  .hasTagsView .fixed-header + .app-main {
-    height: calc(100vh - $navbar-height);
+  .fixed-header + .app-main {
     min-height: calc(100vh - $navbar-height);
-    padding-top: 34px;
+  }
+
+  .hasTagsView .fixed-header + .app-main {
+    min-height: calc(100vh - $navbar-height);
+    padding-top: $tags-view-height;
   }
 }
 
