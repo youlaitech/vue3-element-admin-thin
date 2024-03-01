@@ -49,7 +49,7 @@
         >
           <el-form-item prop="password">
             <div class="flex-y-center w-full">
-              <el-icon class="mx-2"><Lock /></el-icon>
+              <svg-icon icon-class="lock" class="mx-2" />
               <el-input
                 v-model="loginData.password"
                 :placeholder="$t('login.password')"
