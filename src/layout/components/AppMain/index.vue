@@ -55,7 +55,7 @@ const cachedViews = computed(() => useTagsViewStore().cachedViews); // 缓存页
   .app-main {
     height: calc(100vh - $navbar-height);
     padding-top: 0;
-    overflow: auto;
+    overflow-y: auto;
   }
 
   .hasTagsView .app-main {
@@ -68,6 +68,7 @@ const cachedViews = computed(() => useTagsViewStore().cachedViews); // 缓存页
   }
 
   .hasTagsView .fixed-header + .app-main {
+    height: calc(100vh - $navbar-height);
     min-height: calc(100vh - $navbar-height);
     padding-top: $tags-view-height;
   }
