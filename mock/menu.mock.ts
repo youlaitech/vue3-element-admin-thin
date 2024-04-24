@@ -8,6 +8,24 @@ export default defineMock([
       code: "00000",
       data: [
         {
+          path: "/curd",
+          component: "Layout",
+          meta: {
+            alwaysShow: false,
+            roles: ["ADMIN"],
+          },
+          children: [
+            {
+              path: "index",
+              component: "demo/curd/index",
+              meta: {
+                title: "增删改查",
+                roles: ["ADMIN"],
+              },
+            },
+          ],
+        },
+        {
           path: "/doc",
           component: "Layout",
           name: "/doc",

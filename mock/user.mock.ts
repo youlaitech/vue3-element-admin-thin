@@ -33,6 +33,7 @@ export default defineMock([
           "sys:menu:edit",
           "sys:dict:add",
           "sys:role:add",
+          "sys:user:query",
         ],
       },
       msg: "一切ok",

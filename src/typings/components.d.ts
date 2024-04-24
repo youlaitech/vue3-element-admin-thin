@@ -19,6 +19,7 @@ declare module "vue" {
     ElCol: (typeof import("element-plus/es"))["ElCol"];
     ElColorPicker: (typeof import("element-plus/es"))["ElColorPicker"];
     ElConfigProvider: (typeof import("element-plus/es"))["ElConfigProvider"];
+    ElDatePicker: (typeof import("element-plus/es"))["ElDatePicker"];
     ElDialog: (typeof import("element-plus/es"))["ElDialog"];
     ElDivider: (typeof import("element-plus/es"))["ElDivider"];
     ElDrawer: (typeof import("element-plus/es"))["ElDrawer"];
@@ -33,8 +34,10 @@ declare module "vue" {
     ElLink: (typeof import("element-plus/es"))["ElLink"];
     ElMenu: (typeof import("element-plus/es"))["ElMenu"];
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
+    ElOption: (typeof import("element-plus/es"))["ElOption"];
     ElRow: (typeof import("element-plus/es"))["ElRow"];
     ElScrollbar: (typeof import("element-plus/es"))["ElScrollbar"];
+    ElSelect: (typeof import("element-plus/es"))["ElSelect"];
     ElStatistic: (typeof import("element-plus/es"))["ElStatistic"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
     ElSwitch: (typeof import("element-plus/es"))["ElSwitch"];
@@ -46,11 +49,14 @@ declare module "vue" {
     Hamburger: (typeof import("./../components/Hamburger/index.vue"))["default"];
     IEpClose: (typeof import("~icons/ep/close"))["default"];
     IEpDownload: (typeof import("~icons/ep/download"))["default"];
+    IEpRefresh: (typeof import("~icons/ep/refresh"))["default"];
+    IEpSearch: (typeof import("~icons/ep/search"))["default"];
     LangSelect: (typeof import("./../components/LangSelect/index.vue"))["default"];
     LayoutSelect: (typeof import("./../layout/components/Settings/components/LayoutSelect.vue"))["default"];
     NavBar: (typeof import("./../layout/components/NavBar/index.vue"))["default"];
     NavbarLeft: (typeof import("./../layout/components/NavBar/components/NavbarLeft.vue"))["default"];
     NavbarRight: (typeof import("./../layout/components/NavBar/components/NavbarRight.vue"))["default"];
+    PageSearch: (typeof import("./../components/PageSearch/index.vue"))["default"];
     PieChart: (typeof import("./../views/dashboard/components/PieChart.vue"))["default"];
     RadarChart: (typeof import("./../views/dashboard/components/RadarChart.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
