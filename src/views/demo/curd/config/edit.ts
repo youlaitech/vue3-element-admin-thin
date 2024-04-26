@@ -18,6 +18,7 @@ const modalConfig = {
       prop: "username",
       attrs: {
         placeholder: "请输入用户名",
+        readonly: true,
       },
     },
     {
