@@ -35,20 +35,28 @@ declare module "vue" {
     ElMenu: (typeof import("element-plus/es"))["ElMenu"];
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
     ElOption: (typeof import("element-plus/es"))["ElOption"];
+    ElPagination: (typeof import("element-plus/es"))["ElPagination"];
+    ElRadio: (typeof import("element-plus/es"))["ElRadio"];
+    ElRadioGroup: (typeof import("element-plus/es"))["ElRadioGroup"];
     ElRow: (typeof import("element-plus/es"))["ElRow"];
     ElScrollbar: (typeof import("element-plus/es"))["ElScrollbar"];
     ElSelect: (typeof import("element-plus/es"))["ElSelect"];
     ElStatistic: (typeof import("element-plus/es"))["ElStatistic"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
     ElSwitch: (typeof import("element-plus/es"))["ElSwitch"];
+    ElTable: (typeof import("element-plus/es"))["ElTable"];
+    ElTableColumn: (typeof import("element-plus/es"))["ElTableColumn"];
     ElTag: (typeof import("element-plus/es"))["ElTag"];
     ElText: (typeof import("element-plus/es"))["ElText"];
     ElTooltip: (typeof import("element-plus/es"))["ElTooltip"];
+    ElTreeSelect: (typeof import("element-plus/es"))["ElTreeSelect"];
     ElWatermark: (typeof import("element-plus/es"))["ElWatermark"];
     FunnelChart: (typeof import("./../views/dashboard/components/FunnelChart.vue"))["default"];
     Hamburger: (typeof import("./../components/Hamburger/index.vue"))["default"];
     IEpClose: (typeof import("~icons/ep/close"))["default"];
+    IEpDelete: (typeof import("~icons/ep/delete"))["default"];
     IEpDownload: (typeof import("~icons/ep/download"))["default"];
+    IEpPlus: (typeof import("~icons/ep/plus"))["default"];
     IEpRefresh: (typeof import("~icons/ep/refresh"))["default"];
     IEpSearch: (typeof import("~icons/ep/search"))["default"];
     LangSelect: (typeof import("./../components/LangSelect/index.vue"))["default"];
@@ -56,7 +64,10 @@ declare module "vue" {
     NavBar: (typeof import("./../layout/components/NavBar/index.vue"))["default"];
     NavbarLeft: (typeof import("./../layout/components/NavBar/components/NavbarLeft.vue"))["default"];
     NavbarRight: (typeof import("./../layout/components/NavBar/components/NavbarRight.vue"))["default"];
+    PageContent: (typeof import("./../components/PageContent/index.vue"))["default"];
+    PageModal: (typeof import("./../components/PageModal/index.vue"))["default"];
     PageSearch: (typeof import("./../components/PageSearch/index.vue"))["default"];
+    Pagination: (typeof import("./../components/Pagination/index.vue"))["default"];
     PieChart: (typeof import("./../views/dashboard/components/PieChart.vue"))["default"];
     RadarChart: (typeof import("./../views/dashboard/components/RadarChart.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
@@ -72,5 +83,8 @@ declare module "vue" {
     SvgIcon: (typeof import("./../components/SvgIcon/index.vue"))["default"];
     TagsView: (typeof import("./../layout/components/TagsView/index.vue"))["default"];
     ThemeColorPicker: (typeof import("./../layout/components/Settings/components/ThemeColorPicker.vue"))["default"];
+  }
+  export interface ComponentCustomProperties {
+    vLoading: (typeof import("element-plus/es"))["ElLoadingDirective"];
   }
 }

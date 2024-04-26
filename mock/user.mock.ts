@@ -34,6 +34,7 @@ export default defineMock([
           "sys:dict:add",
           "sys:role:add",
           "sys:user:query",
+          "sys:user:export",
         ],
       },
       msg: "一切ok",

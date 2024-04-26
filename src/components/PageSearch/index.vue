@@ -3,13 +3,7 @@
     <el-form ref="queryFormRef" :model="queryParams" :inline="true">
       <template v-for="item in searchConfig.formItems" :key="item.prop">
         <el-form-item :label="item.label" :prop="item.prop">
-          <template v-if="item.type === 'input'">
-            <el-input
-              v-model="queryParams[item.prop]"
-              v-bind="item.attrs"
-              @keyup.enter="handleQuery"
-            />
-          </template>
+          <!-- Select 选择器 -->
           <template v-if="item.type === 'select'">
             <el-select v-model="queryParams[item.prop]" v-bind="item.attrs">
               <template v-for="option in item.options" :key="option.value">
@@ -17,10 +11,19 @@
               </template>
             </el-select>
           </template>
-          <template v-if="item.type === 'date-picker'">
+          <!-- DatePicker 日期选择器 -->
+          <template v-else-if="item.type === 'date-picker'">
             <el-date-picker
               v-model="queryParams[item.prop]"
               v-bind="item.attrs"
+            />
+          </template>
+          <!-- Input 输入框 -->
+          <template v-else>
+            <el-input
+              v-model="queryParams[item.prop]"
+              v-bind="item.attrs"
+              @keyup.enter="handleQuery"
             />
           </template>
         </el-form-item>
@@ -36,6 +39,9 @@
 </template>
 
 <script setup lang="ts">
+import { ref, reactive } from "vue";
+import type { ElForm } from "element-plus";
+
 // 定义接收的属性/自定义事件
 interface IProps {
   searchConfig: {
@@ -51,24 +57,31 @@ interface IProps {
   };
 }
 const props = defineProps<IProps>();
-const emit = defineEmits(["queryClick", "resetClick"]);
+const emit = defineEmits<{
+  queryClick: [queryParams: any];
+  resetClick: [queryParams: any];
+}>();
+// 暴露的属性和方法
+defineExpose({ getQueryParams });
 
-// 定义form的数据
-const initialForm: any = {};
-for (const item of props.searchConfig.formItems) {
-  initialForm[item.prop] = item.initialValue ?? "";
-}
-const queryParams = reactive(initialForm);
-
-// 重置操作
 const queryFormRef = ref<InstanceType<typeof ElForm>>();
+// 定义form的数据
+const queryParams = reactive<any>({});
+for (const item of props.searchConfig.formItems) {
+  queryParams[item.prop] = item.initialValue ?? "";
+}
+// 重置操作
 function handleReset() {
   queryFormRef.value?.resetFields();
-  emit("resetClick");
+  emit("resetClick", queryParams);
 }
-
+// 查询操作
 function handleQuery() {
   emit("queryClick", queryParams);
+}
+// 获取分页数据
+function getQueryParams() {
+  return queryParams;
 }
 </script>
 
