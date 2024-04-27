@@ -9,3 +9,14 @@ export interface UserInfo {
   roles: string[];
   perms: string[];
 }
+
+/**
+ * 用户查询对象类型
+ */
+export interface UserQuery extends PageQuery {
+  keywords?: string;
+  status?: number;
+  deptId?: number;
+  startTime?: string;
+  endTime?: string;
+}
