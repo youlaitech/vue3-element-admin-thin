@@ -142,6 +142,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         "@vueuse/core",
         "path-to-regexp",
         "echarts",
+        "@wangeditor/editor",
+        "@wangeditor/editor-for-vue",
         "vue-i18n",
         "path-browserify",
         "element-plus/es/components/form/style/css",
