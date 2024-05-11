@@ -6,10 +6,8 @@
 export {}
 declare global {
   const EffectScope: (typeof import("vue"))["EffectScope"];
-  const ElForm: (typeof import("element-plus/es"))["ElForm"];
   const ElMessage: (typeof import("element-plus/es"))["ElMessage"];
   const ElMessageBox: (typeof import("element-plus/es"))["ElMessageBox"];
-  const ElTree: (typeof import("element-plus/es"))["ElTree"];
   const acceptHMRUpdate: (typeof import("pinia"))["acceptHMRUpdate"];
   const asyncComputed: (typeof import("@vueuse/core"))["asyncComputed"];
   const autoResetRef: (typeof import("@vueuse/core"))["autoResetRef"];
