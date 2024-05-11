@@ -156,36 +156,6 @@
         </el-card>
       </el-col>
     </el-row>
-
-    <!-- Echarts 图表 -->
-    <el-row :gutter="10" class="mt-3">
-      <el-col :sm="24" :lg="8" class="mb-2">
-        <BarChart
-          id="barChart"
-          height="400px"
-          width="100%"
-          class="bg-[var(--el-bg-color-overlay)]"
-        />
-      </el-col>
-
-      <el-col :xs="24" :sm="12" :lg="8" class="mb-2">
-        <PieChart
-          id="pieChart"
-          height="400px"
-          width="100%"
-          class="bg-[var(--el-bg-color-overlay)]"
-        />
-      </el-col>
-
-      <el-col :xs="24" :sm="12" :lg="8" class="mb-2">
-        <RadarChart
-          id="radarChart"
-          height="400px"
-          width="100%"
-          class="bg-[var(--el-bg-color-overlay)]"
-        />
-      </el-col>
-    </el-row>
   </div>
 </template>
 
