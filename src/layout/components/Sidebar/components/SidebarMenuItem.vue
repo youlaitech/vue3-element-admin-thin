@@ -8,7 +8,13 @@
         !item.meta?.alwaysShow
       "
     >
-      <AppLink v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
+      <AppLink
+        v-if="onlyOneChild.meta"
+        :to="{
+          path: resolvePath(onlyOneChild.path),
+          query: onlyOneChild.meta.params,
+        }"
+      >
         <el-menu-item
           :index="resolvePath(onlyOneChild.path)"
           :class="{ 'submenu-title-noDropdown': !isNest }"
@@ -53,7 +59,7 @@ import { RouteRecordRaw } from "vue-router";
 
 const props = defineProps({
   /**
-   * 路由(eg:user)
+   * 路由(eg:user)123
    */
   item: {
     type: Object,
