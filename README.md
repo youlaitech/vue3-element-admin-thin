@@ -1,21 +1,24 @@
-<p align="center">
-    <img src="https://img.shields.io/badge/Vue-3.4.21-brightgreen.svg"/>
-    <img src="https://img.shields.io/badge/Vite-5.1.5-green.svg"/>
-    <img src="https://img.shields.io/badge/Element Plus-2.6.0-blue.svg"/>
+<div align="center">
+    <img src="https://img.shields.io/badge/Vue-3.4.27-brightgreen.svg"/>
+    <img src="https://img.shields.io/badge/Vite-5.2.11-green.svg"/>
+    <img src="https://img.shields.io/badge/Element Plus-2.7.3-blue.svg"/>
     <img src="https://img.shields.io/badge/license-MIT-green.svg"/>
     <a href="https://gitee.com/youlaiorg" target="_blank">
         <img src="https://img.shields.io/badge/Author-有来开源组织-orange.svg"/>
     </a>
-</p>
-
-
-[vue3-element-admin](https://gitee.com/youlaiorg/vue3-element-admin) 是基于 Vue3 + Vite5+ TypeScript5 + Element-Plus + Pinia 等主流技术栈构建的免费开源的后台管理前端模板（配套[后端源码](https://gitee.com/youlaiorg/youlai-boot)）。
+    <div align="center"> 中文 | <a href="./README.en-US.md">English</div>
+</div>
 
 ![](https://foruda.gitee.com/images/1708618984641188532/a7cca095_716974.png "rainbow.png")
 
-<p align="center">
- <a target="_blank" href="http://vue3.youlai.tech">👀 在线预览</a> |  <a target="_blank" href="https://juejin.cn/post/7228990409909108793">📖 阅读文档</a>  
-</p>
+<div align="center">
+  <a target="_blank" href="http://vue3.youlai.tech">👀 在线预览</a> |  <a target="_blank" href="https://juejin.cn/post/7228990409909108793">📖 阅读文档</a>  
+</div>
+
+## 项目简介
+
+[vue3-element-admin](https://gitee.com/youlaiorg/vue3-element-admin) 是基于 Vue3 + Vite5+ TypeScript5 + Element-Plus + Pinia 等主流技术栈构建的免费开源的后台管理前端模板（配套[后端源码](https://gitee.com/youlaiorg/youlai-boot)）。
+
 
 ## 项目特色
 
@@ -27,7 +30,7 @@
 
 - **基础设施**：动态路由、按钮权限、国际化、代码规范、Git 提交规范、常用组件封装。
 
-- **持续更新**：2021年至今持续更新3年，及时跟进最新的技术和工具。 
+- **持续更新**：自2021年起，该项目持续开源更新，实时更新工具和依赖，积累了广泛的用户群体。
 
 
 
@@ -38,7 +41,6 @@
 ![暗黑模式](https://foruda.gitee.com/images/1709651875494206224/2a2b0b53_716974.png)
 
 ![接口文档](https://foruda.gitee.com/images/1687755822857820115/96054330_716974.png)
- 
 
 ## 项目地址
 
@@ -80,7 +82,7 @@ pnpm run dev
 
 ```bash
 # 项目打包
-pnpm run build:prod
+pnpm run build
 
 # 上传文件至远程服务器
 将打包生成在 `dist` 目录下的文件拷贝至 `/usr/share/nginx/html` 目录
@@ -95,7 +97,8 @@ server {
 	}
 	# 反向代理配置
 	location /prod-api/ {
-			proxy_pass http://vapi.youlai.tech/; # vapi.youlai.tech替换成你的后端API地址
+            # vapi.youlai.tech 替换后端API地址，注意保留后面的斜杠 /
+            proxy_pass http://vapi.youlai.tech/; 
 	}
 }
 ```
@@ -147,14 +150,21 @@ server {
 - [Husky + Lint-staged + Commitlint + Commitizen + cz-git 配置 Git 提交规范](https://blog.csdn.net/u013737132/article/details/130191363)
 
 
-
-
 ## 提交规范
 
 执行 `pnpm run commit` 唤起 git commit 交互，根据提示完成信息的输入和选择。
 
 ![](https://foruda.gitee.com/images/1687755823165218215/c1705416_716974.png)
 
+
+## 项目统计
+
+![Alt](https://repobeats.axiom.co/api/embed/aa7cca3d6fa9c308fc659fa6e09af9a1910506c3.svg "Repobeats analytics image")
+
+
+Thanks to all the contributors!
+
+[![contributors](https://contrib.rocks/image?repo=youlaitech/vue3-element-admin)](https://github.com/youlaitech/vue3-element-admin/graphs/contributors)
 
 
 ## 交流群🚀
