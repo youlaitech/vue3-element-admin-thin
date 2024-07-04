@@ -6,10 +6,9 @@
 export {}
 declare global {
   const EffectScope: (typeof import("vue"))["EffectScope"];
-  const ElForm: (typeof import("element-plus/es"))["ElForm"];
   const ElMessage: (typeof import("element-plus/es"))["ElMessage"];
   const ElMessageBox: (typeof import("element-plus/es"))["ElMessageBox"];
-  const ElTree: (typeof import("element-plus/es"))["ElTree"];
+  const ElNotification: (typeof import("element-plus/es"))["ElNotification"];
   const acceptHMRUpdate: (typeof import("pinia"))["acceptHMRUpdate"];
   const asyncComputed: (typeof import("@vueuse/core"))["asyncComputed"];
   const autoResetRef: (typeof import("@vueuse/core"))["autoResetRef"];
@@ -330,6 +329,9 @@ declare module "vue" {
     >;
     readonly ElMessageBox: UnwrapRef<
       (typeof import("element-plus/es"))["ElMessageBox"]
+    >;
+    readonly ElNotification: UnwrapRef<
+      (typeof import("element-plus/es"))["ElNotification"]
     >;
     readonly acceptHMRUpdate: UnwrapRef<
       (typeof import("pinia"))["acceptHMRUpdate"]
@@ -1058,6 +1060,9 @@ declare module "@vue/runtime-core" {
     >;
     readonly ElMessageBox: UnwrapRef<
       (typeof import("element-plus/es"))["ElMessageBox"]
+    >;
+    readonly ElNotification: UnwrapRef<
+      (typeof import("element-plus/es"))["ElNotification"]
     >;
     readonly acceptHMRUpdate: UnwrapRef<
       (typeof import("pinia"))["acceptHMRUpdate"]

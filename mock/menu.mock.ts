@@ -10,12 +10,14 @@ export default defineMock([
         {
           path: "/doc",
           component: "Layout",
+          redirect: "https://juejin.cn/post/7228990409909108793",
           name: "/doc",
           meta: {
             title: "平台文档",
             icon: "document",
             hidden: false,
-            roles: ["ADMIN"],
+            alwaysShow: false,
+            params: null,
           },
           children: [
             {
@@ -26,7 +28,8 @@ export default defineMock([
                 title: "平台文档(内嵌)",
                 icon: "document",
                 hidden: false,
-                roles: ["ADMIN"],
+                alwaysShow: false,
+                params: null,
               },
             },
             {
@@ -36,7 +39,8 @@ export default defineMock([
                 title: "平台文档(外链)",
                 icon: "link",
                 hidden: false,
-                roles: ["ADMIN"],
+                alwaysShow: false,
+                params: null,
               },
             },
           ],
@@ -44,39 +48,37 @@ export default defineMock([
         {
           path: "/multi-level",
           component: "Layout",
-          redirect: "/multi-level/multi-level1",
           name: "/multiLevel",
           meta: {
             title: "多级菜单",
             icon: "cascader",
             hidden: false,
-            roles: ["ADMIN"],
+            alwaysShow: true,
+            params: null,
           },
           children: [
             {
               path: "multi-level1",
               component: "demo/multi-level/level1",
-              redirect: "/multi-level/multi-level2",
               name: "MultiLevel1",
               meta: {
                 title: "菜单一级",
                 icon: "",
                 hidden: false,
-                roles: ["ADMIN"],
-                keepAlive: true,
+                alwaysShow: true,
+                params: null,
               },
               children: [
                 {
                   path: "multi-level2",
                   component: "demo/multi-level/children/level2",
-                  redirect: "/multi-level/multi-level2/multi-level3-1",
                   name: "MultiLevel2",
                   meta: {
                     title: "菜单二级",
                     icon: "",
                     hidden: false,
-                    roles: ["ADMIN"],
-                    keepAlive: true,
+                    alwaysShow: false,
+                    params: null,
                   },
                   children: [
                     {
@@ -87,8 +89,9 @@ export default defineMock([
                         title: "菜单三级-1",
                         icon: "",
                         hidden: false,
-                        roles: ["ADMIN"],
                         keepAlive: true,
+                        alwaysShow: false,
+                        params: null,
                       },
                     },
                     {
@@ -99,8 +102,9 @@ export default defineMock([
                         title: "菜单三级-2",
                         icon: "",
                         hidden: false,
-                        roles: ["ADMIN"],
                         keepAlive: true,
+                        alwaysShow: false,
+                        params: null,
                       },
                     },
                   ],
