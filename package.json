@@ -54,6 +54,7 @@
     "path-browserify": "^1.0.1",
     "path-to-regexp": "^6.2.2",
     "pinia": "^2.1.7",
+    "qs": "^6.13.0",
     "vue": "^3.4.29",
     "vue-i18n": "9.9.1",
     "vue-router": "^4.3.3"
@@ -66,6 +67,7 @@
     "@types/node": "^20.14.3",
     "@types/nprogress": "^0.2.3",
     "@types/path-browserify": "^1.0.2",
+    "@types/qs": "^6.9.15",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "@vitejs/plugin-vue": "^5.0.5",
