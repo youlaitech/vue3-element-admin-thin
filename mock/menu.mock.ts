@@ -37,7 +37,7 @@ export default defineMock([
               name: "Https://juejin.cn/post/7228990409909108793",
               meta: {
                 title: "平台文档(外链)",
-                icon: "link",
+                icon: "el-icon-Link",
                 hidden: false,
                 alwaysShow: false,
                 params: null,

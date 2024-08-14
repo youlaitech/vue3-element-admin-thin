@@ -1,23 +1,29 @@
+
 <div align="center">
-    <img src="https://img.shields.io/badge/Vue-3.4.29-brightgreen.svg"/>
-    <img src="https://img.shields.io/badge/Vite-5.3.1-green.svg"/>
-    <img src="https://img.shields.io/badge/Element Plus-2.7.5-blue.svg"/>
-    <img src="https://img.shields.io/badge/license-MIT-green.svg"/>
-    <a href="https://gitee.com/youlaiorg" target="_blank">
-        <img src="https://img.shields.io/badge/Author-有来开源组织-orange.svg"/>
-    </a>
-    <div align="center"> 中文 | <a href="./README.en-US.md">English</div>
+  <img alt="vue3-element-admin" width="80" height="80" src="./src/assets/logo.png">
+  <h1>vue3-element-admin</h1>
+
+  <img src="https://img.shields.io/badge/Vue-3.4.35-brightgreen.svg"/>
+  <img src="https://img.shields.io/badge/Vite-5.3.5-green.svg"/>
+  <img src="https://img.shields.io/badge/Element Plus-2.7.8-blue.svg"/>
+  <img src="https://img.shields.io/badge/license-MIT-green.svg"/>
+  <a href="https://gitee.com/youlaiorg" target="_blank">
+      <img src="https://img.shields.io/badge/Author-有来开源组织-orange.svg"/>
+  </a>
 </div>
 
 ![](https://foruda.gitee.com/images/1708618984641188532/a7cca095_716974.png "rainbow.png")
 
+
 <div align="center">
-  <a target="_blank" href="http://vue3.youlai.tech">👀 在线预览</a> |  <a target="_blank" href="https://juejin.cn/post/7228990409909108793">📖 阅读文档</a>  
+  <a target="_blank" href="http://vue3.youlai.tech">🔍 在线预览</a> |  <a target="_blank" href="https://juejin.cn/post/7228990409909108793">📖 阅读文档</a> | <a href="./README.en-US.md">🌐English
 </div>
+
+
 
 ## 项目简介
 
-[vue3-element-admin](https://gitee.com/youlaiorg/vue3-element-admin) 是基于 Vue3 + Vite5+ TypeScript5 + Element-Plus + Pinia 等主流技术栈构建的免费开源的后台管理前端模板（配套[后端源码](https://gitee.com/youlaiorg/youlai-boot)）。
+[vue3-element-admin](https://gitee.com/youlaiorg/vue3-element-admin) 是基于 Vue3 + Vite5+ TypeScript5 + Element-Plus + Pinia 等主流技术栈构建的免费开源的中后台管理的前端模板（配套[Java 后端源码](https://gitee.com/youlaiorg/youlai-boot)）。
 
 
 ## 项目特色
@@ -70,6 +76,9 @@ cd vue3-element-admin
 # 安装 pnpm
 npm install pnpm -g
 
+# 设置镜像源(可忽略)
+pnpm config set registry https://registry.npmmirror.com
+
 # 安装依赖
 pnpm install
 
@@ -86,7 +95,7 @@ pnpm run dev
 pnpm run build
 
 # 上传文件至远程服务器
-将打包生成在 `dist` 目录下的文件拷贝至 `/usr/share/nginx/html` 目录
+将本地打包生成的 dist 目录下的所有文件拷贝至服务器的 /usr/share/nginx/html 目录。
 
 # nginx.cofig 配置
 server {
