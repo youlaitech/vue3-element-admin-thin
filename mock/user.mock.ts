@@ -11,7 +11,7 @@ export default defineMock([
         nickname: "系统管理员",
         username: "admin",
         avatar:
-          "https://oss.youlai.tech/youlai-boot/2023/05/16/811270ef31f548af9cffc026dfc3777b.gif",
+          "https://foruda.gitee.com/images/1723603502796844527/03cdca2a_716974.gif?imageView2/1/w/80/h/80",
         roles: ["ROOT"],
         perms: [
           "sys:menu:delete",
