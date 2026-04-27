@@ -11,6 +11,7 @@ export default {
     login: "登 录",
     captchaCode: "验证码",
     capsLock: "大写锁定已打开",
+    rememberMe: "记住账号",
     message: {
       username: {
         required: "请输入用户名",
@@ -22,6 +23,7 @@ export default {
       captchaCode: {
         required: "请输入验证码",
       },
+      loginFailed: "登录失败：",
     },
   },
   // 导航栏国际化

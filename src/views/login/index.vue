@@ -84,6 +84,23 @@
           </div>
         </el-form-item>
 
+        <!-- 记住账号 -->
+        <el-form-item>
+          <el-checkbox v-model="rememberMe" @keyup.enter="handleLoginSubmit">
+            {{ $t("login.rememberMe") }}
+          </el-checkbox>
+        </el-form-item>
+
+        <!-- 错误提示 -->
+        <el-form-item v-if="errorMessage">
+          <el-alert
+            :title="$t('login.message.loginFailed') + errorMessage"
+            type="error"
+            :closable="false"
+            show-icon
+          />
+        </el-form-item>
+
         <!-- 登录按钮 -->
         <el-button
           :loading="loading"
@@ -153,8 +170,17 @@ const captchaBase64 = ref();
 // 登录表单ref
 const loginFormRef = ref<FormInstance>();
 
+// 记住账号状态
+const rememberMe = ref(false);
+// 错误提示信息
+const errorMessage = ref("");
+
+// localStorage 键名
+const REMEMBER_USERNAME_KEY = "rememberedUsername";
+const REMEMBER_ME_KEY = "rememberMe";
+
 const loginData = ref<LoginData>({
-  username: "admin",
+  username: "",
   password: "123456",
   captchaKey: "",
   captchaCode: "",
@@ -201,16 +227,45 @@ function getCaptcha() {
 
 /** 登录表单提交 */
 function handleLoginSubmit() {
+  // 清除之前的错误提示
+  errorMessage.value = "";
+
   loginFormRef.value?.validate((valid: boolean) => {
     if (valid) {
       loading.value = true;
       userStore
         .login(loginData.value)
         .then(() => {
+          // 登录成功，处理记住账号
+          if (rememberMe.value) {
+            localStorage.setItem(
+              REMEMBER_USERNAME_KEY,
+              loginData.value.username
+            );
+            localStorage.setItem(REMEMBER_ME_KEY, "true");
+          } else {
+            // 不记住账号时，清除之前保存的
+            localStorage.removeItem(REMEMBER_USERNAME_KEY);
+            localStorage.removeItem(REMEMBER_ME_KEY);
+          }
+
           const { path, queryParams } = parseRedirect();
           router.push({ path: path, query: queryParams });
         })
-        .catch(() => {
+        .catch((error) => {
+          // 登录失败，显示错误信息
+          if (typeof error === "string") {
+            errorMessage.value = error;
+          } else if (error?.message) {
+            errorMessage.value = error.message;
+          } else if (error?.response?.data?.msg) {
+            errorMessage.value = error.response.data.msg;
+          } else if (error?.response?.data?.message) {
+            errorMessage.value = error.response.data.message;
+          } else {
+            errorMessage.value = t("login.message.loginFailed") + "未知错误";
+          }
+          // 刷新验证码
           getCaptcha();
         })
         .finally(() => {
@@ -264,6 +319,15 @@ function checkCapslock(event: KeyboardEvent) {
 }
 
 onMounted(() => {
+  // 从 localStorage 中读取记住的用户名和记住账号的状态
+  const savedUsername = localStorage.getItem(REMEMBER_USERNAME_KEY);
+  const savedRememberMe = localStorage.getItem(REMEMBER_ME_KEY);
+
+  if (savedUsername && savedRememberMe === "true") {
+    loginData.value.username = savedUsername;
+    rememberMe.value = true;
+  }
+
   getCaptcha();
 });
 </script>
